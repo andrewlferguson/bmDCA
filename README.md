@@ -1,10 +1,36 @@
-# Boltzmann-machine Direct Coupling Analysis (bmDCA)
+# bmDCA (alternate)
 
 Dependencies (installation instructions detailed below):
  * [Armadillo](http://arma.sourceforge.net/)
  * [GCC](https://gcc.gnu.org/) that supports the C++11 standard and
    [OpenMP](https://en.wikipedia.org/wiki/OpenMP)
  * Autotools
+
+This repository is an alternate version of bmDCA where the armadillo source
+files are provided. Almost all of the code is defined in header files, so there
+is no need for linking libraries at compile time.
+
+For macOS users, the default version of `gcc` is actually `clang`, a different
+compiler that doesn't support the `fopenmp` flag used for parallelization. (You
+can check this behavior by running `gcc --version`.) To install `gcc`, you can
+use Homebrew:
+
+```
+brew install gcc
+```
+
+You will then need to alias `gcc` to the path to the Homebrew version.
+
+__IMPORTANT: DON'T USE THIS REPOSITORY VIA GIT!!!!!!!__
+This repository is rebased on the master branch, meaning that if you try to
+`git pull` updates, you'll get merge conflicts. What you should do is download
+zip/tarball files from the GitHub repository webpage and re-download it if you
+want to get the latest version.
+
+This branch is a temporary measure pending a permanent cross-platform fix for
+linking armadillo and using gcc.
+
+## Usage
 
 This repository contains a C++ reimplementation of bmDCA adapted from [the
 original](https://github.com/matteofigliuzzi/bmDCA) code. Method is described
@@ -19,46 +45,6 @@ parallelize the MCMC in the inference loop. It also allows the use of
 position-specific regularization when learning couplings.
 
 ## Installing dependencies
-
-### Armadillo
-
-Armadillo is a C++ linear algebra library. It can be installed using the
-standard package repositories for most Linux distributions (check AUR for Arch
-Linux) and Homebrew on macOS (`brew install armadillo`).
-
-__Note for macOS users__: bmDCA depends on `pkg-config` for finding paths for
-source files and shared object libraries. The directories where the program
-expects to find pkgconfig \*.pc files are listed in the `PKG_CONFIG_PATH`
-variable (run: `echo $PKG_CONFIG_PATH`). To ensure that `pkg-config` finds
-these files for Homebrew-installed programs, you can append to the variable
-manually, or you can use the `pkgconfig_find()` function provided the
-`tools/rcparams` file. Simply append the contents of that file to your shell
-run commands (e.g. `${HOME}/.bashrc`).
-
-Additionally, the linker can only link libraries found in directories specified
-in `LD_LIBRARY_PATH`. To add the armadillo `lib/` directory to this variable,
-append to the variable yourself, or you can use the `ld_path_add()` function,
-also defined in the `tools/rcparams` file.
-
-__OR__
-
-If a compiled package is not available, you will need to install it
-manually. First, make sure that `cmake`, `openblas` (or `blas`), `lapack`,
-`arpack`, and `SuperLU` are installed. Then, to download and install armadillo
-system wide, run the following (Unix systems only):
-
-```
-wget https://sourceforge.net/projects/arma/files/armadillo-9.850.1.tar.xz
-tar xf armadillo-9.850.1.tar.xz
-cd armadillo-9.850.1
-cmake .
-make -j4
-sudo make install
-```
-
-The files will be installed to `/usr/local/include` and `/usr/local/lib` by
-default. Make sure that both directories are in your `PKG_CONFIG_PATH` and
-`LD_LIBRARY_PATH` environmental variables.
 
 ### GCC
 

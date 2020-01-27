@@ -1,6 +1,6 @@
 #include "model.hpp"
 
-#include <armadillo>
+#include "armadillo"
 
 #include "utils.hpp"
 

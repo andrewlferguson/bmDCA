@@ -18,16 +18,6 @@ m4_include([m4/ax_cxx_compile_stdcxx.m4])
 AX_CXX_COMPILE_STDCXX([11], [noext], [mandatory])
 
 # Check for required libraries and headers.
-PKG_CHECK_MODULES(
-  [ARMADILLO],
-  [armadillo],
-  [],
-  [AC_CHECK_HEADERS(
-    [armadillo],
-    [],
-    [AC_MSG_ERROR("missing armadillo")],
-    [])
-  ])
 AC_OPENMP
 AC_CHECK_HEADERS(
   [stdio.h assert.h],

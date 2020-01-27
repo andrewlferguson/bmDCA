@@ -1,6 +1,6 @@
 #include "mcmc_stats.hpp"
 
-#include <armadillo>
+#include "armadillo"
 #include <iostream>
 
 #include "utils.hpp"

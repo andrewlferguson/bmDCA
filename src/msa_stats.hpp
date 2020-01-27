@@ -3,7 +3,7 @@
 
 #include "msa.hpp"
 
-#include <armadillo>
+#include "armadillo"
 
 class MSAStats
 {

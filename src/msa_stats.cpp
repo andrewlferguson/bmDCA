@@ -1,6 +1,6 @@
 #include "msa_stats.hpp"
 
-#include <armadillo>
+#include "armadillo"
 #include <cmath>
 #include <fstream>
 #include <iostream>

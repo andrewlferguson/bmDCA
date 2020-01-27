@@ -1,7 +1,7 @@
 #ifndef MCMC_STATS_HPP
 #define MCMC_STATS_HPP
 
-#include <armadillo>
+#include "armadillo"
 
 #include "utils.hpp"
 

@@ -1,7 +1,7 @@
 #ifndef MSA_HPP
 #define MSA_HPP
 
-#include <armadillo>
+#include "armadillo"
 #include <string>
 #include <vector>
 

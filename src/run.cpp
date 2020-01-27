@@ -1,6 +1,6 @@
 #include "run.hpp"
 
-#include <armadillo>
+#include "armadillo"
 #include <cassert>
 #include <cstdlib>
 #include <fstream>

@@ -1,7 +1,7 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
-#include <armadillo>
+#include "armadillo"
 #include <string>
 
 class SeqRecord
