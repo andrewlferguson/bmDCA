@@ -19,7 +19,13 @@ use Homebrew:
 brew install gcc
 ```
 
-You will then need to alias `gcc` to the path to the Homebrew version.
+You will then need to alias `gcc` to the path to the Homebrew version. Add the
+line to your shell run command file (e.g. bashrc):
+```
+alias gcc=/usr/local/Cellar/gcc/bin/gcc-9
+```
+
+(You may need to edit the above path to match the gcc location on your system.)
 
 __IMPORTANT: DON'T USE THIS REPOSITORY VIA GIT!!!!!!!__
 This repository is rebased on the master branch, meaning that if you try to
